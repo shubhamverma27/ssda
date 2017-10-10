@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profiling</title>
+</head>
+<style type="text/css">
+
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript">
+	
+function getdata()
+{
+	var name=document.getElementById('fname').value;
+	var lname=document.getElementById('lname').value;
+	var gender=document.getElementById('gend').value;
+   // document.getElementById('update').innerHTML+="<br>"+name+" "+lname;
+    if (document.getElementById('age').value==1)
+    	document.getElementById('update').innerHTML+=" MINOR : CAN'T DRIVE";
+    if (document.getElementById('age').value==2)
+    	{
+    		document.getElementById('update').innerHTML=" RECOMMENDED CARS SHOWN BELOW";
+    		if(document.getElementById('cars').value==2)
+    		document.getElementById('recom').innerHTML="<ul><li>I10</li><li>I20</li><li>CRETA</li></ul>";
+    	if(document.getElementById('cars').value==1)
+    		document.getElementById('recom').innerHTML="<ul><li>ALTO</li><li>SWIFT</li><li>SX4</li></ul>";
+    	if(document.getElementById('cars').value==3)
+    		document.getElementById('recom').innerHTML="<ul><li>CITY</li><li>CR-V</li><li>JAZZ</li></ul>";
+    	if(document.getElementById('cars').value==4)
+    		document.getElementById('recom').innerHTML="<ul><li>R8</li><li>A4</li><li>A6</li></ul>";
+    	document.getElementById("recom").style.display="block";
+		}
+		if (document.getElementById('age').value==3)
+    	{
+    		document.getElementById('update').innerHTML=" RECOMMENDED CARS SHOWN BELOW";
+    		if(document.getElementById('cars').value==2)
+    		document.getElementById('recom').innerHTML="<ul><li>Tucson</li><li>Verna</li><li>CRETA</li></ul>";
+    	if(document.getElementById('cars').value==1)
+    		document.getElementById('recom').innerHTML="<ul><li>Vitara</li><li>SWIFT</li><li>Baleno</li></ul>";
+    	if(document.getElementById('cars').value==3)
+    		document.getElementById('recom').innerHTML="<ul><li>CITY AUTO</li><li>BRIO</li><li>JAZZ</li></ul>";
+    	if(document.getElementById('cars').value==4)
+    		document.getElementById('recom').innerHTML="<ul><li>R1</li><li>A8</li><li>A6</li></ul>";
+    	document.getElementById("recom").style.display="block";
+		}
+  
+}
+
+
+</script>
+<body>
+<div id="login">
+	<form id="new">
+		 First name:<br>
+  <input type="text" name="firstname" id="fname"><br>
+  Last name:<br>
+  <input type="text" name="lastname" id="lname"><br><br>
+<select name="gender" id="gend">
+  <option value="male">male</option>
+  <option value="female">female</option>
+  <option value="other">other</option>
+
+</select>
+
+
+<br>
+<select name="cars" id='cars'>
+  <option value="1">Suzuki</option>
+  <option value="2">Hyundai</option>
+  <option value="3">Honda</option>
+  <option value="4">Audi</option>
+</select>
+<br>
+
+<select name="age" id='age'>
+  <option value="1">&le;20</option>
+  <option value="2">&ge;20</option>
+  <option value="3">&ge;50</option>
+</select>
+<button type="button" onclick="getdata()">Click Me!</button>
+	</form>
+
+<br><br><br>
+</div>
+<div id="home">
+	
+		<div id="update"></div>
+	
+<div id="recom" style="display: none"></div>
+	
+</div>
+</body>
+</html>
